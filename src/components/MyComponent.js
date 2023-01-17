@@ -1,20 +1,30 @@
 import React from 'react';
+import UserInfor from './UserInfor';
+import DisplayInfor from './DisplayInfor';
 
 class MyComponent extends React.Component {
     // JSX
     // bên trong jsx chỉ được 1 element (1 thẻ div)
     // cặp {} để viết biến, logic, javascript 
-
+    
     state = {
-        name: 'Vanh',
-        address: 'HaNoi',
-        age: 21
+        listUsers: [
+            { id: 1, name: 'Bui' , age: 20},
+            { id: 2, name: 'Viet', age: 21},
+            { id: 3, name: 'Anh' , age: 22}
+        ]
     };
 
     render() {
+        // DRY: don't repeat yourself
+        
         return (
             <div> 
-                My name is {this.state.name} and I'm from {this.state.address}
+        
+                <UserInfor/>
+                <br/><br/>
+                <DisplayInfor listUsers = {this.state.listUsers} abc = 'hehe'/>
+
             </div>
         )
     }
