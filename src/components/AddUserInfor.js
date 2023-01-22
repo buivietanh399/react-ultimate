@@ -1,65 +1,4 @@
-import React, {useState} from 'react';
-
-// class AddUserInfor extends React.Component {
-
-    // state = {
-    //     name: '',
-    //     address: 'ha noi',
-    //     age: ''
-    // };
-    
-    // handleOnChangeInput = (event) => {
-    //     this.setState(
-    //         { 
-    //             name: event.target.value,
-    //         }
-    //     );
-    // }
-
-    // handleOnChangeAge = (event) => {
-    //     this.setState(
-    //         { 
-    //             age: event.target.value
-    //         }
-    //     );
-    // }
-
-//     handleOnSubmit = (event) => {
-//         event.preventDefault();   // hàm ngăn chặn load lại trang
-//         console.log(this.state);
-//         this.props.handleAddNewUser({
-//             id: (Math.floor(Math.random()*100+1)) + ' - random',
-//             name: this.state.name,
-//             age: this.state.age
-//         }) ; 
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                  My name is {this.state.name} and I'm {this.state.age}
-
-//                 <form onSubmit = {(event) => this.handleOnSubmit(event) } >
-//                     <label>Your name: </label>
-//                     <input type = "text" 
-//                         placeholder='Điền' 
-//                         value= {this.state.name}
-//                         onChange = {(event) => this.handleOnChangeInput(event)}
-//                     />
-//                     <button>Submit</button>
-
-//                     <label>Your age: </label>
-//                     <input type = "text" 
-//                         placeholder='Điền' 
-//                         value= {this.state.age}
-//                         onChange = {(event) => this.handleOnChangeAge(event)}
-//                     />
-//                     <button>Submit</button>
-//                 </form>
-//             </div>
-//         )
-//     }
-// }
+import React, {useEffect, useState} from 'react';
 
 const AddUserInfor = (props) => {
 
@@ -84,6 +23,7 @@ const AddUserInfor = (props) => {
             age: age
         }) ; 
     }
+
 
     return (
             <div>
