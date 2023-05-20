@@ -4,12 +4,40 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter,
+        Routes,
+        Route,
+} from 'react-router-dom';
+
+import User from './components/home/User';
+import Admin from './components/Admin/Admin';
+import HomePage from './components/home/HomePage';
+import rootReducer from './redux/reducer/rootReducer';
+import ManageUser from './components/Admin/Content/ManageUser';
+import DashBoard from './components/Admin/Content/DashBoard';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     {/* <React.StrictMode> */}
-      <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path = "/" element = {<App/>}>    
+          <Route index element = {<HomePage/>} />
+          <Route path = "users" element = {<User/>} />
+          
+        </Route>
+
+        <Route path = "admins" element = {<Admin/>} >
+
+            <Route index element = {<DashBoard/>}/>
+            <Route path = "manage-users" element = {<ManageUser/>} />
+            
+        </Route>
+      </Routes>
+    </BrowserRouter>
     {/* </React.StrictMode> */}
   </Provider>
 );
